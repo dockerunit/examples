@@ -4,6 +4,7 @@ package com.github.dockerunit.examples.springboot;
 import static com.github.dockerunit.examples.springboot.Constants.SERVICE_NAME;
 import static org.hamcrest.Matchers.equalTo;
 
+import com.github.dockerunit.annotation.WithSvc;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -13,13 +14,12 @@ import com.github.dockerunit.DockerUnitRule;
 import com.github.dockerunit.Service;
 import com.github.dockerunit.ServiceContext;
 import com.github.dockerunit.ServiceInstance;
-import com.github.dockerunit.annotation.Use;
 import com.github.dockerunit.examples.springboot.descriptors.BaseDescriptor;
 
 import io.restassured.RestAssured;
 
 @Category(ContainerTest.class)
-@Use(service=BaseDescriptor.class, replicas = 2)
+@WithSvc(svc = BaseDescriptor.class, replicas = 2)
 public class RuleBasedTest {
 	
 	@Rule

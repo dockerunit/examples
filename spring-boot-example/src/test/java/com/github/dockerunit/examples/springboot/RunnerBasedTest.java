@@ -5,6 +5,7 @@ import static com.github.dockerunit.examples.springboot.Constants.FOO_VALUE_FROM
 import static com.github.dockerunit.examples.springboot.Constants.SERVICE_NAME;
 import static org.hamcrest.Matchers.equalTo;
 
+import com.github.dockerunit.annotation.WithSvc;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
@@ -13,7 +14,6 @@ import com.github.dockerunit.DockerUnitRunner;
 import com.github.dockerunit.Service;
 import com.github.dockerunit.ServiceContext;
 import com.github.dockerunit.ServiceInstance;
-import com.github.dockerunit.annotation.Use;
 import com.github.dockerunit.examples.springboot.descriptors.BaseDescriptor;
 import com.github.dockerunit.examples.springboot.descriptors.TestConfigVolumeDescriptor;
 import com.github.dockerunit.examples.springboot.descriptors.TestEnvDescriptor;
@@ -25,7 +25,7 @@ import io.restassured.RestAssured;
 public class RunnerBasedTest {
 
 	@Test
-	@Use(service=BaseDescriptor.class)
+	@WithSvc(svc = BaseDescriptor.class)
 	public void healthCheckShouldReturn200(ServiceContext context) {
 		Service s = context.getService(SERVICE_NAME);
 		ServiceInstance si = s.getInstances().stream().findAny().get();
@@ -41,7 +41,7 @@ public class RunnerBasedTest {
 	}
 	
 	@Test
-	@Use(service=BaseDescriptor.class, replicas= 2)
+	@WithSvc(svc = BaseDescriptor.class, replicas= 2)
 	public void healthCheckShouldReturn200FromEachReplica(ServiceContext context) {
 		Service s = context.getService(SERVICE_NAME);
 		s.getInstances().forEach(si -> {
@@ -57,7 +57,7 @@ public class RunnerBasedTest {
 	}
 	
 	@Test
-	@Use(service=BaseDescriptor.class)
+	@WithSvc(svc = BaseDescriptor.class)
 	public void greetingShouldReturnImageConfigValue(ServiceContext context) {
 		Service s = context.getService(SERVICE_NAME);
 		ServiceInstance si = s.getInstances().stream().findAny().get();
@@ -75,7 +75,7 @@ public class RunnerBasedTest {
 	}
 	
 	@Test
-	@Use(service=TestConfigVolumeDescriptor.class)
+	@WithSvc(svc = TestConfigVolumeDescriptor.class)
 	public void greetingShouldReturnTestConfigValue(ServiceContext context) {
 		Service s = context.getService(SERVICE_NAME);
 		ServiceInstance si = s.getInstances().stream().findAny().get();
@@ -93,7 +93,7 @@ public class RunnerBasedTest {
 	}
 	
 	@Test
-	@Use(service=BaseDescriptor.class)
+	@WithSvc(svc = BaseDescriptor.class)
 	public void envShouldReturnValuesFromImage(ServiceContext context) {
 		Service s = context.getService(SERVICE_NAME);
 		ServiceInstance si = s.getInstances().stream().findAny().get();
@@ -111,7 +111,7 @@ public class RunnerBasedTest {
 	}
 	
 	@Test
-	@Use(service=TestEnvDescriptor.class)
+	@WithSvc(svc = TestEnvDescriptor.class)
 	public void envShouldReturnValuesFromDescriptor(ServiceContext context) {
 		Service s = context.getService(SERVICE_NAME);
 		ServiceInstance si = s.getInstances().stream().findAny().get();
