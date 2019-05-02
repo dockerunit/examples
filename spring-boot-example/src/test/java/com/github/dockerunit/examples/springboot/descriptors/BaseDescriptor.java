@@ -7,7 +7,7 @@ import com.github.dockerunit.discovery.consul.annotation.WebHealthCheck;
 import com.github.dockerunit.examples.springboot.Constants;
 
 @Svc(name = Constants.SERVICE_NAME, image = Constants.IMAGE_NAME)
-@WebHealthCheck(port =8080)
+@WebHealthCheck(port = 8080)
 @PublishPorts
 @UseConsulDns
 public class BaseDescriptor {
