@@ -13,7 +13,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<properties>
-    <dockerunit.version>1.1.0-SNAPSHOT</dockerunit.version>
+    <dockerunit.version>2.0.0-SNAPSHOT</dockerunit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 	</properties>
