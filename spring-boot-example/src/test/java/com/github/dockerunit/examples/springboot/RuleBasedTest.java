@@ -1,22 +1,20 @@
 
 package com.github.dockerunit.examples.springboot;
 
-import static com.github.dockerunit.examples.springboot.Constants.SERVICE_NAME;
-import static org.hamcrest.Matchers.equalTo;
-
-import com.github.dockerunit.annotation.WithSvc;
+import com.github.dockerunit.core.Service;
+import com.github.dockerunit.core.ServiceContext;
+import com.github.dockerunit.core.ServiceInstance;
+import com.github.dockerunit.core.annotation.WithSvc;
+import com.github.dockerunit.examples.springboot.descriptors.BaseDescriptor;
+import com.github.dockerunit.junit4.DockerUnitRule;
+import io.restassured.RestAssured;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import com.github.dockerunit.DockerUnitRule;
-import com.github.dockerunit.Service;
-import com.github.dockerunit.ServiceContext;
-import com.github.dockerunit.ServiceInstance;
-import com.github.dockerunit.examples.springboot.descriptors.BaseDescriptor;
-
-import io.restassured.RestAssured;
+import static com.github.dockerunit.examples.springboot.Constants.SERVICE_NAME;
+import static org.hamcrest.Matchers.equalTo;
 
 @Category(ContainerTest.class)
 @WithSvc(svc = BaseDescriptor.class, replicas = 2)

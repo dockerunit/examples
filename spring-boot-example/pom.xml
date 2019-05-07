@@ -40,6 +40,12 @@
 			<version>${dockerunit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.github.dockerunit</groupId>
+			<artifactId>dockerunit-junit4</artifactId>
+			<version>${dockerunit.version}</version>
+			<scope>test</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>io.rest-assured</groupId>

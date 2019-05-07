@@ -1,8 +1,8 @@
 package com.github.dockerunit.examples.springboot.descriptors;
 
-import com.github.dockerunit.annotation.Env;
-import com.github.dockerunit.annotation.PublishPort;
-import com.github.dockerunit.annotation.Svc;
+import com.github.dockerunit.core.annotation.Env;
+import com.github.dockerunit.core.annotation.PublishPort;
+import com.github.dockerunit.core.annotation.Svc;
 import com.github.dockerunit.discovery.consul.annotation.WebHealthCheck;
 import com.github.dockerunit.examples.springboot.Constants;
 
