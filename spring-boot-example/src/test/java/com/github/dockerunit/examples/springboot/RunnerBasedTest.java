@@ -1,24 +1,20 @@
 package com.github.dockerunit.examples.springboot;
 
-import static com.github.dockerunit.examples.springboot.Constants.BAR_VALUE_FROM_DESCRIPTOR;
-import static com.github.dockerunit.examples.springboot.Constants.FOO_VALUE_FROM_IMAGE;
-import static com.github.dockerunit.examples.springboot.Constants.SERVICE_NAME;
-import static org.hamcrest.Matchers.equalTo;
-
-import com.github.dockerunit.annotation.WithSvc;
+import com.github.dockerunit.core.Service;
+import com.github.dockerunit.core.ServiceContext;
+import com.github.dockerunit.core.ServiceInstance;
+import com.github.dockerunit.core.annotation.WithSvc;
+import com.github.dockerunit.examples.springboot.descriptors.BaseDescriptor;
+import com.github.dockerunit.examples.springboot.descriptors.TestConfigVolumeDescriptor;
+import com.github.dockerunit.examples.springboot.descriptors.TestEnvDescriptor;
+import com.github.dockerunit.junit4.DockerUnitRunner;
+import io.restassured.RestAssured;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 
-import com.github.dockerunit.DockerUnitRunner;
-import com.github.dockerunit.Service;
-import com.github.dockerunit.ServiceContext;
-import com.github.dockerunit.ServiceInstance;
-import com.github.dockerunit.examples.springboot.descriptors.BaseDescriptor;
-import com.github.dockerunit.examples.springboot.descriptors.TestConfigVolumeDescriptor;
-import com.github.dockerunit.examples.springboot.descriptors.TestEnvDescriptor;
-
-import io.restassured.RestAssured;
+import static com.github.dockerunit.examples.springboot.Constants.*;
+import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(DockerUnitRunner.class)
 @Category(ContainerTest.class)
