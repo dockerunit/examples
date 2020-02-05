@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.dockerunit</groupId>
 	<artifactId>dockerunit-spring-boot-example</artifactId>
@@ -13,7 +13,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<properties>
-    <dockerunit.version>2.0.0-SNAPSHOT</dockerunit.version>
+		<dockerunit.version>0.1.0</dockerunit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 	</properties>
@@ -110,7 +110,7 @@
 							</includes>
 							<groups>com.github.dockerunit.examples.springboot.ContainerTest</groups>
 							<classpathDependencyExcludes>
-	 							<classpathDependencyExclude>
+								<classpathDependencyExclude>
 									ch.qos.logback:logback-classic
 								</classpathDependencyExclude>
 							</classpathDependencyExcludes>
